@@ -31,22 +31,23 @@ namespace DesafioFundamentos.Models
             {
                 Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-            try
-{
-    string horasEstacionamento = Console.ReadLine();
-    int horas = Int32.Parse(horasEstacionamento);
-    decimal valorTotal = precoInicial + precoPorHora * horas;
+                try
+                {
+                    string horasEstacionamento = Console.ReadLine();
+                    int horas = Int32.Parse(horasEstacionamento);
+                    decimal valorTotal = precoInicial + precoPorHora * horas;
 
-    // Remover a placa digitada da lista de veículos
+                    // Remover a placa digitada da lista de veículos
 
-    veiculos.Remove(placa);
+                    veiculos.Remove(placa);
 
-    Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
-}
-catch (FormatException)
-{
-    Console.WriteLine("Por favor, insira um valor válido para as horas.");
-} }
+                    Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Por favor, insira um valor válido para as horas.");
+                }
+            }
             else
             {
                 Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
@@ -59,9 +60,9 @@ catch (FormatException)
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
-                // TODO: Realizar um laço de repetição, exibindo os veículos estacionados
-                // *IMPLEMENTE AQUI*
-                veiculos.ForEach(delegate(string item)
+                //laço de repetição, exibindo os veículos estacionados
+                
+                veiculos.ForEach(delegate (string item)
 {
     Console.WriteLine($"{item}");
 });
